@@ -29,30 +29,6 @@ publishes the modified greeting value to kafka topic. Kafka consumers who listen
 gets the modified greeting  messages. 
 
 ```
-curl -X PUT -H "Content-Type: application/json" -d '{"greeting" : "Hola"}' http://localhost:8080/greet/greeting
+curl -X PUT -H "Content-Type: application/json" -d '{"greeting" : "Hola"}' http://localhost:8090/greet/greeting
 
-```
-
-
-## Build the Docker Image
-
-```
-docker build -t helidon-example-mp-kafka .
-```
-
-## Start the application with Docker
-
-```
-docker run --rm -p 8080:8080 helidon-example-mp-kafka:latest
-```
-
-Exercise the application as described above
-
-## Deploy the application to Kubernetes
-
-```
-kubectl cluster-info                         # Verify which cluster
-kubectl get pods                             # Verify connectivity to cluster
-kubectl create -f app.yaml               # Deploy application
-kubectl get service helidon-example-mp-kafka  # Verify deployed service
 ```

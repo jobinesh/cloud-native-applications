@@ -41,4 +41,4 @@ COPY --from=build /helidon/target/libs ./libs
 
 CMD ["java", "-jar", "helidon-example-mp-kafka.jar"]
 
-EXPOSE 8080
+EXPOSE 8090

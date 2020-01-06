@@ -10,7 +10,6 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.Random;
 
 @ApplicationScoped
 public class KafkaMessageProducer {
@@ -44,12 +43,7 @@ public class KafkaMessageProducer {
 
     public void publishMessage(String message) throws IOException {
 
-
-        // So we can generate random sentences
-        Random random = new Random();
-
-        String progressAnimation = "|/-\\";
-        // Send the sentence to the test topic
+        // Send the message to the topic
         try {
             producer.send(new ProducerRecord<String, String>(topic, message));
             producer.flush();

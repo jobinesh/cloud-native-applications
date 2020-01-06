@@ -112,7 +112,7 @@ public class GreetResource {
         String newGreeting = jsonObject.getString("greeting");
 
         greetingProvider.setMessage(newGreeting);
-        producer.publishMessage( "greeting:"+newGreeting);
+        producer.publishMessage(jsonObject.toString());
         return Response.status(Response.Status.NO_CONTENT).build();
     }
 

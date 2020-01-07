@@ -9,8 +9,7 @@ You can follow either of the following to run the Kafka locally
 - Alternatively  you can run Kafka docker image, which may help you to get Kafka up and running in no time. 
 Go to kafka-docker folder in the project source and run the docker-compose up as shown here: 
  ``` 
-  cd kafka-docker
-  docker-compose up
+  docker-compose up -d
  ```
 
 ## Build and run

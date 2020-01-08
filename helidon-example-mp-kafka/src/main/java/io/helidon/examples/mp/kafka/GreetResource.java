@@ -56,7 +56,7 @@ public class GreetResource {
      * The Kafka Message Producer
      */
     @Inject
-    private KafkaMessageProducer producer;
+    private KafkaClassicMessageProducer producer;
 
 
     public GreetResource() {

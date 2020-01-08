@@ -25,8 +25,8 @@ mvn package
 java -jar target/helidon-example-mp-kafka.jar
 ```
 ## A glance the the implementation
-- ClassicKafkaMessageConsumer: This class contains the logic for listening to the Kafka topic
-- ClassicKafkaMessageProducer:  This class contains  the logic for publishing messages to the Kafka topic. This uses a custom annotation '@Startup' so that it gets instantiated on application start up. The annotation '@Startup' is provided by io.helidon.examples.mp.spi.StartupInitializerExtension class in this project. To learn more about this extension, read section '16.1. Creating an Extension' in https://docs.jboss.org/weld/reference/latest/en-US/html/extend.html
+- ClassicKafkaMessageConsumer: This class contains the logic for listening to the Kafka topic. This class uses a custom annotation '@Startup' so that it gets instantiated on application start up. The annotation '@Startup' is provided by io.helidon.examples.mp.spi.StartupInitializerExtension class in this project. To learn more about this extension, read section '16.1. Creating an Extension' in https://docs.jboss.org/weld/reference/latest/en-US/html/extend.html
+- ClassicKafkaMessageProducer:  This class contains  the logic for publishing messages to the Kafka topic. It is used by GreetResource class.
 - GreetResource: This is the REST resource implemnetation used in this example. When updateGreeting method is called
 via REST PUT operation, the new greeting sent by cleint is sent to Kafka queue for consumption by the Kafka consumers
 - microprofile-config.properties: This config file holds the kafka configuration used in this example

@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 @ApplicationScoped
-public class KafkaMessageProducer {
+public class ClassicKafkaMessageProducer {
     @Inject
     @ConfigProperty(name = "kafka.broker")
     private String broker;
@@ -25,7 +25,7 @@ public class KafkaMessageProducer {
 
     KafkaProducer<String, String> producer;
 
-    public KafkaMessageProducer() {
+    public ClassicKafkaMessageProducer() {
     }
 
     @PostConstruct

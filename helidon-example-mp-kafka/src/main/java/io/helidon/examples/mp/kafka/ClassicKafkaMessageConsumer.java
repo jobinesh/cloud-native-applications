@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 
 @ApplicationScoped
 @Startup
-public class KafkaMessageConsumer {
+public class ClassicKafkaMessageConsumer {
     @Inject
     @ConfigProperty(name = "kafka.broker")
     String broker;
@@ -31,7 +31,7 @@ public class KafkaMessageConsumer {
     KafkaConsumer<String, String> consumer;
     Logger logger = Logger.getLogger(this.getClass().getName());
 
-    public KafkaMessageConsumer() {
+    public ClassicKafkaMessageConsumer() {
     }
     @PostConstruct
     private void init(){

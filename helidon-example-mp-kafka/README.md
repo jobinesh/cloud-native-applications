@@ -3,8 +3,9 @@
 This example demonstrates the integration of Kafka with a simple Microservice built using Helidon MicroProfile.
 
 ## Install All Required Tools
-Install Docker: https://docs.docker.com/install/
-Install Docker-compose: https://docs.docker.com/compose/install/
+- Install Docker: https://docs.docker.com/install/
+- Install Docker-compose: https://docs.docker.com/compose/install/
+
 
 Clone the git https://github.com/jobinesh/cloud-native-applications.git
 

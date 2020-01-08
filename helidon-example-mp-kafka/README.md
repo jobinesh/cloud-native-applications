@@ -2,15 +2,19 @@
 
 This example demonstrates the integration of Kafka with a simple Microservice built using Helidon MicroProfile.
 
+## Install All Required Tools
+Install Docker: https://docs.docker.com/install/
+Install Docker-compose: https://docs.docker.com/compose/install/
+
+Clone the git https://github.com/jobinesh/cloud-native-applications.git
+
 ## Start Kafka
 We need a Kafka cluster to run this example. Please finish this step before proceeding further. 
-You can follow either of the following to run the Kafka locally
-- Set up Kafka locally by following the instructions from Apache Kafka web site: https://kafka.apache.org/quickstart
-- Alternatively  you can run Kafka docker image, which may help you to get Kafka up and running in no time. 
-Go to kafka-docker folder in the project source and run the docker-compose up as shown here: 
+Go to project root folder in the project source and run the docker-compose up as shown here. This is the quick way of getting kafka running locally: 
  ``` 
   docker-compose up -d
  ```
+Alternatively you can set up Kafka locally by following the instructions from Apache Kafka web site: https://kafka.apache.org/quickstart
 
 ## Build and run
 

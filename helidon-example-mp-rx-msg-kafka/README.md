@@ -27,8 +27,8 @@ java -jar target/helidon-example-mp-rx-msg-kafka
 ## A Glance at the Implementation
 - RxMessagingKafkaConsumer: This class listens to the Kafka topic using the MicroProfile Reactive Messaging declarative constructs. 
 - RxMessagingKafkaProducer:  This class publishes messages to the Kafka topic using the MicroProfile Reactive Messaging declarative constructs. It is used by GreetResource class.
-- GreetResource: This is the REST resource implemnetation used in this example. When updateGreeting method is called
-via REST PUT operation, the new greeting sent by cleint is sent to Kafka queue for consumption by the Kafka consumers
+- GreetResource: This is the REST resource implementation used in this example. When updateGreeting method is called
+via REST PUT operation, the new greeting sent by client is sent to Kafka queue for consumption by the Kafka consumers
 - microprofile-config.properties: This config file holds the kafka configuration used in this example
 
 ## Exercising the Example

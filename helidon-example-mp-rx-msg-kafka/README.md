@@ -6,8 +6,9 @@ This example demonstrates the integration of Kafka with a simple Microservice bu
 - Install Docker: https://docs.docker.com/install/
 - Install Docker-compose: https://docs.docker.com/compose/install/
 
-
-Clone the git https://github.com/jobinesh/cloud-native-applications.git
+## Clone the Repository
+- Clone the git https://github.com/jobinesh/cloud-native-applications.git
+- Navigate to helidon-example-mp-rx-msg-kafka
 
 ## Start Kafka
 We need a Kafka cluster to run this example. Please finish this step before proceeding further. 

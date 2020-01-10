@@ -6,8 +6,9 @@ This example demonstrates the integration of Kafka with a simple Microservice bu
 - Install Docker: https://docs.docker.com/install/
 - Install Docker-compose: https://docs.docker.com/compose/install/
 
-
-Clone the git https://github.com/jobinesh/cloud-native-applications.git
+## Clone the Repository
+- Clone the git https://github.com/jobinesh/cloud-native-applications.git
+- Navigate to helidon-example-mp-kafka
 
 ## Start Kafka
 We need a Kafka cluster to run this example. Please finish this step before proceeding further. 
@@ -27,8 +28,8 @@ java -jar target/helidon-example-mp-kafka.jar
 ## A Glance at the Implementation
 - ClassicKafkaMessageConsumer: This class contains the logic for listening to the Kafka topic. This class uses a custom annotation '@Startup' so that it gets instantiated on application start up. The annotation '@Startup' is provided by io.helidon.examples.mp.spi.StartupInitializerExtension class in this project. To learn more about this extension, read section '16.1. Creating an Extension' in https://docs.jboss.org/weld/reference/latest/en-US/html/extend.html
 - ClassicKafkaMessageProducer:  This class contains  the logic for publishing messages to the Kafka topic. It is used by GreetResource class.
-- GreetResource: This is the REST resource implemnetation used in this example. When updateGreeting method is called
-via REST PUT operation, the new greeting sent by cleint is sent to Kafka queue for consumption by the Kafka consumers
+- GreetResource: : This is the REST resource implementation used in this example. When updateGreeting method is called
+via REST PUT operation, the new greeting sent by client is sent to Kafka queue for consumption by the Kafka consumers
 - microprofile-config.properties: This config file holds the kafka configuration used in this example
 
 ## Exercising the Example

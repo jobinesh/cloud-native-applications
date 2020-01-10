@@ -51,14 +51,11 @@ public class GreetResource {
      */
     @Inject
     private GreetingProvider greetingProvider;
-
     /**
-     * The Kafka Message Producer
+     * Kafka producer
      */
     @Inject
-    private KafkaClassicMessageProducer producer;
-
-
+    KafkaReactiveMessageProducer producer;
     public GreetResource() {
 
     }
@@ -110,9 +107,10 @@ public class GreetResource {
         }
 
         String newGreeting = jsonObject.getString("greeting");
-
         greetingProvider.setMessage(newGreeting);
-        producer.publishMessage(jsonObject.toString());
+        //Put the message to queue for publishing to kafka
+        producer.putIntoMessagingQueue( jsonObject.toString());
+
         return Response.status(Response.Status.NO_CONTENT).build();
     }
 

@@ -1,0 +1,27 @@
+syntax = "proto3";
+package com.jobinesh.example.grpc.server;
+
+// Request payload
+message HelloWorldRequest {
+  // Each message attribute is strongly typed.
+  // You also must assign a "tag" number.
+  // Each tag number is unique within the message.
+  string name = 1;
+
+  // This defines a strongly typed list of String
+  repeated string hobbies = 2;
+
+  // There are many more basics types, like Enum, Map
+  // See https://developers.google.com/protocol-buffers/docs/proto3
+  // for more information.
+}
+
+message HelloWorldResponse {
+  string greeting = 1;
+}
+
+// Defining a Service, a Service can have multiple RPC operations
+service HelloWorldService {
+  // Define a RPC operation
+  rpc sayHello(HelloWorldRequest) returns (HelloWorldResponse);
+}

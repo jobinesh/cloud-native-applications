@@ -1,4 +1,4 @@
-This is a very simple example for a gRPC server and client. Here are the steps:
+This is a very basic example showcasing how to build a simple gRPC server and a client. Here are the steps:
 
 ## Create a gRPC Service
 ```
@@ -32,6 +32,12 @@ Edit the App class and add the implementation. You can refer to the following fi
 ```
 $ mvn -DskipTests package exec:java -Dexec.mainClass=com.jobineh.example.grpc.server.App
 ```
+Server console output the following
+
+```
+Server started
+```
+
 ## Add the Client
 
 Add a new client for exercising the above service. Here is an example: https://github.com/jobinesh/cloud-native-applications/blob/master/grpc-hello-world-server/src/main/java/com/jobinesh/example/grpc/client/Client.java
@@ -40,3 +46,8 @@ Add a new client for exercising the above service. Here is an example: https://g
 ```
 $ mvn -DskipTests package exec:java -Dexec.mainClass=com.example.grpc.cleint.Client
 ```
+You may notice the following output on the client console:
+```
+greeting: "Hello there, Jobinesh"
+```
+The official quickstart tutorial is available here: https://grpc.io/docs/quickstart/java/

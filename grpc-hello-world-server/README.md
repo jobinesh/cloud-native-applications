@@ -25,3 +25,15 @@ Refer to this file to know how a typical implementation code may look like: http
 Implement the Server
 
 Edit the App class and add the implementation. You can refer to the following file to know the APIs and thier usage pattern: https://github.com/jobinesh/cloud-native-applications/blob/master/grpc-hello-world-server/src/main/java/com/jobinesh/example/grpc/server/App.java
+
+Run the Server
+
+$ mvn -DskipTests package exec:java -Dexec.mainClass=com.jobineh.example.grpc.server.App
+
+Add a Client
+
+Add a new client for exercising the above service. Here is an example: https://github.com/jobinesh/cloud-native-applications/blob/master/grpc-hello-world-server/src/main/java/com/jobinesh/example/grpc/client/Client.java
+
+Consume the gRPC APIs with the simple Client
+
+$ mvn -DskipTests package exec:java -Dexec.mainClass=com.example.grpc.cleint.Client

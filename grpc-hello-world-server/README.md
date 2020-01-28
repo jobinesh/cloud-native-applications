@@ -50,4 +50,4 @@ You may notice the following output on the client console:
 ```
 greeting: "Hello there, Jobinesh"
 ```
-The official quickstart tutorial is available here: https://grpc.io/docs/quickstart/java/
+The official quickstart tutorial is available here: https://codelabs.developers.google.com/codelabs/cloud-grpc-java/index.html

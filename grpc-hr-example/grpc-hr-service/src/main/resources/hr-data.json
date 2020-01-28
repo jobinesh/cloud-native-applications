@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1000,
+    "departmentName": "HR",
+    "location": "San Francisco",
+    "employees": [
+      {
+        "id": 10001,
+        "firstName": "Tom",
+        "lastName": "Lee",
+        "phone": "60044445555",
+        "email": "tom.lee@grpc.com"
+      },
+      {
+        "id": 10002,
+        "firstName": "Venus",
+        "lastName": "Kim",
+        "phone": "60044445556",
+        "email": "venus.kim@grpc.com"
+      }
+    ]
+  },
+  {
+    "id": 2000,
+    "departmentName": "IT",
+    "location": "New York",
+    "employees": [
+      {
+        "id": 20001,
+        "firstName": "Ram",
+        "lastName": "Mohan",
+        "phone": "60044445553",
+        "email": "ram.mohan@grpc.com"
+      },
+      {
+        "id": 20002,
+        "firstName": "Anup",
+        "lastName": "Kim",
+        "phone": "60044445558",
+        "email": "anup.kim@grpc.com"
+      }
+    ]
+  }
+]

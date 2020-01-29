@@ -45,11 +45,10 @@ public class GrpcClient {
 
     private void exercieAllAPIs() throws InterruptedException {
         GrpcClient client = new GrpcClient();
-        CountDownLatch finishLatch = new CountDownLatch(1);
 
         try {
             log("gRPC Client");
-
+            CountDownLatch finishLatch = new CountDownLatch(1);
             client.updateDepartmentsUsingStream(finishLatch);
             /*
             client.fetchAllDepartmentsUsingStream();
@@ -60,7 +59,9 @@ public class GrpcClient {
             client.deleteDepartment(1000L);
             dept = client.findDepartmentById(1000L);
             */
-
+            if (!finishLatch.await(10, TimeUnit.SECONDS)) {
+                log("gRPC API call can not finish within 10 seconds");
+            }
 
         } catch (StatusRuntimeException e) {
             // Do not use Status.equals(...) - it's not well defined. Compare Code directly.
@@ -69,9 +70,6 @@ public class GrpcClient {
             }
         } finally {
 
-            if (!finishLatch.await(10, TimeUnit.SECONDS)) {
-                log("gRPC API call can not finish within 10 seconds");
-            }
             client.shutdown();
         }
     }

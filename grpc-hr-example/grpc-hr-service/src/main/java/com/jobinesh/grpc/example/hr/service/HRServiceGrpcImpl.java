@@ -82,4 +82,42 @@ public class HRServiceGrpcImpl extends HRServiceGrpc.HRServiceImplBase {
         }
 
     }
+
+    /**
+     * @param request
+     * @param responseObserver
+     */
+    @Override
+    public void findAllDepartments(Empty request, StreamObserver<Department> responseObserver) {
+        List<DepartmentEntity> deptEntities = hrServiceDataRepository.findAllDepartments();
+        for (DepartmentEntity dept : deptEntities) {
+            responseObserver.onNext(dept.toProto());
+        }
+        responseObserver.onCompleted();
+    }
+
+    /**
+     * @param responseObserver
+     */
+    @Override
+    public StreamObserver<Department> updateDepartmentsInBatch(StreamObserver<Department> responseObserver) {
+        return new StreamObserver<Department>() {
+            @Override
+            public void onNext(Department request) {
+
+                DepartmentEntity savedDept = hrServiceDataRepository.updateDepartment( DepartmentEntity.fromProto(request));
+                responseObserver.onNext(savedDept.toProto());
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                t.printStackTrace();
+            }
+
+            @Override
+            public void onCompleted() {
+                responseObserver.onCompleted();
+            }
+        };
+    }
 }

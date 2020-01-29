@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class HRServiceDataRepository {
@@ -29,11 +30,17 @@ public class HRServiceDataRepository {
         return department;
     }
 
+    public List<DepartmentEntity> findAllDepartments(){
+        List<DepartmentEntity> departmentEntityList = departmentsMap.values().stream().collect(Collectors.toList());
+        return departmentEntityList;
+
+    }
     public List<DepartmentEntity> findDepartmentsByFilter(DepartmentFilter departmentFilter) {
         List<DepartmentEntity> filteredList = departmentsMap.values().stream()
-                .filter(x -> x.getId().equals(departmentFilter.getId())
-                        || x.getLocation().equals(departmentFilter.getLocation())
-                        || x.getDepartmentName().equals( departmentFilter.getDepartmentName())
+                .filter(Objects::nonNull)
+                .filter(x -> ((departmentFilter.getId() == 0 || x.getId().equals(departmentFilter.getId()))
+                        && (departmentFilter.getLocation().isEmpty()  || x.getLocation().equals(departmentFilter.getLocation()))
+                        && (departmentFilter.getDepartmentName().isEmpty() || x.getDepartmentName().equals(departmentFilter.getDepartmentName())))
                 )
                 .collect(Collectors.toList());
         return filteredList;
@@ -45,8 +52,8 @@ public class HRServiceDataRepository {
     }
 
     public DepartmentEntity findDepartmentById(Long id) {
-        if(id<0){
-           throw new  IllegalArgumentException("Department Id cannot be negative!");
+        if (id < 0) {
+            throw new IllegalArgumentException("Department Id cannot be negative!");
         }
         return departmentsMap.get(id);
     }

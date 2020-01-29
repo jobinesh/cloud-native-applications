@@ -21,6 +21,8 @@ service HRService {
   rpc findDepartmentsByFilter(DepartmentFilter) returns (DepartmentList) {};
   rpc deleteDepartment(google.protobuf.Int64Value) returns (google.protobuf.Empty) {};
   rpc findDepartmentById (google.protobuf.Int64Value) returns (Department) {};
+  rpc findAllDepartments(google.protobuf.Empty) returns (stream Department) {};
+  rpc updateDepartmentsInBatch(stream Department) returns (stream Department){};
 }
 
 //Department filter object

@@ -9,7 +9,7 @@
     <properties>
         <grpc.version>1.26.0</grpc.version>
         <protobuf.version>3.11.0</protobuf.version>
-        <jackson.version>2.9.6</jackson.version>
+        <jackson.version>2.9.10.1</jackson.version>
     </properties>
     <modules>
         <module>grpc-hr-proto</module>

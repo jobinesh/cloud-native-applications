@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.jobinesh.example.grpc.helidon.hr.service";
+option java_outer_classname = "HRServiceProto";
+option objc_class_prefix = "HR";
+
+package com.jobinesh.example.grpc.helidon.hr.service;
+import "common.proto";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/any.proto";
+import "google/protobuf/type.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/wrappers.proto";
+
+// Interface exported by the server.
+service HRService {
+  rpc createDepartment (Department) returns (Department) {};
+  rpc updateDepartment (Department) returns (Department) {};
+  rpc findDepartmentsByFilter(DepartmentFilter) returns (DepartmentList) {};
+  rpc deleteDepartment(google.protobuf.Int64Value) returns (google.protobuf.Empty) {};
+  rpc findDepartmentById (google.protobuf.Int64Value) returns (Department) {};
+  rpc findAllDepartments(google.protobuf.Empty) returns (stream Department) {};
+  rpc updateDepartmentsInBatch(stream Department) returns (stream Department){};
+}
+
+//Department filter object
+message DepartmentFilter {
+  int64 id = 1;
+  string departmentName = 2;
+  string location = 3;
+}
+
+//Department result list
+message DepartmentList {
+    repeated Department resultList=1;
+    google.protobuf.Int64Value resultCount=2;
+}
+
+//Department object
+message Department {
+  int64 id = 1;
+  string departmentName = 2;
+  string location = 3;
+  repeated Employee employees = 4;
+}
+//Employee object
+message Employee {
+  int64 id = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string phone = 4;
+  string email = 5;
+}

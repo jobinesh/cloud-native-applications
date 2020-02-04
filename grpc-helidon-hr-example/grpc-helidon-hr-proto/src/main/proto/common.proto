@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+
+option java_package = "com.jobinesh.example.grpc.helidon.hr.service";
+
+
+package com.jobinesh.example.grpc.helidon.hr.service;
+
+import "google/protobuf/any.proto";
+
+message Pagination{
+	int32 page = 1;
+	int32 pageSize = 2;
+	Search search = 3;
+	repeated string sortParam = 5;
+}
+
+message Search{
+	google.protobuf.Any filter = 1;
+    string jsonFilter = 2;
+}
+
+
+message UpdateValue{
+   string jsonValue=1;
+   int64 id=2;
+}

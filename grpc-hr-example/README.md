@@ -11,7 +11,7 @@ $ mvn install
 3. Start the gRPC Server
 ```
  $ cd  grpc-hr-service 
- $ mvn mvn exec:java  -Dexec.mainClass="com.jobinesh.grpc.example.hr.service.GrpcServer"
+ $ mvn exec:java  -Dexec.mainClass="com.jobinesh.grpc.example.hr.service.GrpcServer"
 ```  
 4. Run the Client
 ```

@@ -1,17 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.jobinesh.example.grpc</groupId>
-    <artifactId>grpc-hr-client</artifactId>
-    <packaging>jar</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <name>grpc-hr-client</name>
-    <url>http://maven.apache.org</url>
     <parent>
         <groupId>com.jobinesh.example.grpc</groupId>
         <artifactId>grpc-hr-example</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>grpc-hr-client</artifactId>
+    <packaging>jar</packaging>
+    <name>${project.artifactId}</name>
+    <url>http://maven.apache.org</url>
+
     <dependencies>
         <dependency>
             <groupId>com.jobinesh.example.grpc</groupId>
@@ -43,7 +42,7 @@
             <artifactId>jackson-databind</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.jobinesh.grpc.example.hr</groupId>
+            <groupId>com.jobinesh.example.grpc</groupId>
             <artifactId>grpc-hr-service</artifactId>
             <version>${project.version}</version>
         </dependency>

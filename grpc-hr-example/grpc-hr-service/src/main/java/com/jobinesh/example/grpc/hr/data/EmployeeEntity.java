@@ -1,6 +1,6 @@
-package com.jobinesh.grpc.example.hr.data;
+package com.jobinesh.example.grpc.hr.data;
 
-import com.jobinesh.grpc.example.hr.service.Employee;
+import com.jobinesh.example.grpc.hr.service.Employee;
 
 public class EmployeeEntity {
     private Long id;

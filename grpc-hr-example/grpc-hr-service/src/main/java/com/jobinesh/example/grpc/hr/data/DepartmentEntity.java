@@ -1,8 +1,8 @@
-package com.jobinesh.grpc.example.hr.data;
+package com.jobinesh.example.grpc.hr.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.jobinesh.grpc.example.hr.service.Department;
-import com.jobinesh.grpc.example.hr.service.Employee;
+import com.jobinesh.example.grpc.hr.service.Department;
+import com.jobinesh.example.grpc.hr.service.Employee;
 
 import java.util.List;
 import java.util.stream.Collectors;

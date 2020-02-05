@@ -1,4 +1,4 @@
-package com.jobinesh.grpc.example.hr.service;
+package com.jobinesh.example.grpc.hr.service;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;

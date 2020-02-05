@@ -1,4 +1,4 @@
-package com.jobinesh.grpc.example.hr;
+package com.jobinesh.example.grpc.hr.service;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

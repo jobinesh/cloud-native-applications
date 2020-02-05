@@ -1,14 +1,14 @@
-package com.jobinesh.grpc.example.hr.client;
+package com.jobinesh.example.grpc.hr.client;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.protobuf.Empty;
 import com.google.protobuf.Int64Value;
-import com.jobinesh.grpc.example.hr.data.DepartmentEntity;
-import com.jobinesh.grpc.example.hr.service.Department;
-import com.jobinesh.grpc.example.hr.service.DepartmentFilter;
-import com.jobinesh.grpc.example.hr.service.DepartmentList;
-import com.jobinesh.grpc.example.hr.service.HRServiceGrpc;
+import com.jobinesh.example.grpc.hr.data.DepartmentEntity;
+import com.jobinesh.example.grpc.hr.service.Department;
+import com.jobinesh.example.grpc.hr.service.DepartmentFilter;
+import com.jobinesh.example.grpc.hr.service.DepartmentList;
+import com.jobinesh.example.grpc.hr.service.HRServiceGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Status;

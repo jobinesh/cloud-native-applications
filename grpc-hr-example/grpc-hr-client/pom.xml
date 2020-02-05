@@ -10,7 +10,6 @@
     <packaging>jar</packaging>
     <name>${project.artifactId}</name>
     <url>http://maven.apache.org</url>
-
     <dependencies>
         <dependency>
             <groupId>com.jobinesh.example.grpc</groupId>

@@ -1,9 +1,9 @@
-package com.jobinesh.grpc.example.hr.service;
+package com.jobinesh.example.grpc.hr.service;
 
 import com.google.protobuf.Empty;
 import com.google.protobuf.Int64Value;
-import com.jobinesh.grpc.example.hr.data.DepartmentEntity;
-import com.jobinesh.grpc.example.hr.data.HRServiceDataRepository;
+import com.jobinesh.example.grpc.hr.data.DepartmentEntity;
+import com.jobinesh.example.grpc.hr.data.HRServiceDataRepository;
 import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;

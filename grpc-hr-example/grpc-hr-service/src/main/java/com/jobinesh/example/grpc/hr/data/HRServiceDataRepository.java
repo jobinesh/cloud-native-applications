@@ -1,9 +1,9 @@
-package com.jobinesh.grpc.example.hr.data;
+package com.jobinesh.example.grpc.hr.data;
 
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jobinesh.grpc.example.hr.service.DepartmentFilter;
+import com.jobinesh.example.grpc.hr.service.DepartmentFilter;
 
 import java.io.InputStream;
 import java.util.ArrayList;

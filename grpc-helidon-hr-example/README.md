@@ -8,7 +8,7 @@ $ cd  cloud-native-applications/grpc-helidon-hr-example
 $ mvn install
 ```    
 
-3. Start the gRPC Server
+3. Start the Helidon SE based gRPC Server
 ```
  $ cd  grpc-helidon-hr-service 
  $ mvn exec:java 
@@ -16,5 +16,5 @@ $ mvn install
 4. Run the Client
 ```
  $ cd  grpc-helidon-hr-client  
- $ mvn exec:java
+ $  mvn exec:java -DskipTests -Dexec.mainClass=com.jobinesh.example.grpc.helidon.hr.client.GrpcClient
 ```

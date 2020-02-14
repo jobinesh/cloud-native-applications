@@ -67,7 +67,7 @@ public class HelidonSEServer {
                 .register(health)
                 .build();
 
-        ServerConfiguration webServerConfig = ServerConfiguration.builder(config.get("webserver")).build();
+        ServerConfiguration webServerConfig = ServerConfiguration.builder(config.get("server")).build();
 
         WebServer.create(webServerConfig, routing)
                 .start()

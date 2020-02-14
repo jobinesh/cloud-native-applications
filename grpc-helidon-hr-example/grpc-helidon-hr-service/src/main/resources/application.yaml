@@ -16,11 +16,9 @@
 #
 
 grpc:
-  name: "test.server"
+  name: "grpc.server"
   port: 1408
 
 server:
+  name: "http.server"
   port: 8080
-
-tracing:
-  service: "grpc-server"

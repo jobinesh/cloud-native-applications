@@ -29,7 +29,7 @@
     <artifactId>grpc-helidon-hr-service</artifactId>
     <name>${project.artifactId}</name>
     <properties>
-        <mainClass>com.jobinesh.example.grpc.helidon.hr.service.HelidonSEServer</mainClass>
+      <mainClass>com.jobinesh.example.grpc.helidon.hr.service.HelidonSEServer</mainClass>
     </properties>
 
     <dependencies>
@@ -39,21 +39,20 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.helidon.microprofile.bundles</groupId>
-            <artifactId>helidon-microprofile</artifactId>
+            <groupId>io.helidon.grpc</groupId>
+            <artifactId>helidon-grpc-server</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.helidon.microprofile.grpc</groupId>
-            <artifactId>helidon-microprofile-grpc-server</artifactId>
+            <groupId>io.helidon.grpc</groupId>
+            <artifactId>helidon-grpc-client</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.helidon.microprofile.grpc</groupId>
-            <artifactId>helidon-microprofile-grpc-client</artifactId>
+            <groupId>io.helidon.health</groupId>
+            <artifactId>helidon-health-checks</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.helidon.microprofile.bundles</groupId>
-            <artifactId>internal-test-libs</artifactId>
-            <scope>test</scope>
+            <groupId>io.helidon.bundles</groupId>
+            <artifactId>helidon-bundles-config</artifactId>
         </dependency>
         <dependency>
             <groupId>org.jboss</groupId>
@@ -81,42 +80,22 @@
             <artifactId>junit-jupiter-api</artifactId>
             <scope>test</scope>
         </dependency>
-        <!--grpc-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
 
     </dependencies>
 
     <build>
         <plugins>
             <plugin>
-                <groupId>org.jboss.jandex</groupId>
-                <artifactId>jandex-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>make-index</id>
-                        <goals>
-                            <goal>jandex</goal>
-                        </goals>
-                        <phase>process-classes</phase>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <configuration>
-                    <reuseForks>false</reuseForks>
-                    <includes>
-                        <include>**/*IT.java</include>
-                    </includes>
-                </configuration>
+                <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>verify</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
+                        <id>copy-libs</id>
                     </execution>
                 </executions>
             </plugin>

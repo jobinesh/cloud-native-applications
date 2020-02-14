@@ -9,7 +9,7 @@
     <url>http://maven.apache.org</url>
     <parent>
         <groupId>io.helidon.applications</groupId>
-        <artifactId>helidon-mp</artifactId>
+        <artifactId>helidon-se</artifactId>
         <version>1.4.1</version>
         <relativePath/>
     </parent>

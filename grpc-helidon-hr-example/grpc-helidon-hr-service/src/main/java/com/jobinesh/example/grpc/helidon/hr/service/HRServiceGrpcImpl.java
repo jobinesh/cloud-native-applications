@@ -11,12 +11,10 @@ import com.jobinesh.example.grpc.hr.service.HRServiceGrpc;
 import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
-import io.helidon.microprofile.grpc.core.RpcService;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@RpcService
 public class HRServiceGrpcImpl extends HRServiceGrpc.HRServiceImplBase {
 
 

@@ -1,11 +1,11 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "com.jobinesh.example.grpc.helidon.hr.service";
+option java_package = "com.jobinesh.example.grpc.hr.service";
 option java_outer_classname = "HRServiceProto";
 option objc_class_prefix = "HR";
 
-package com.jobinesh.example.grpc.helidon.hr.service;
+package com.jobinesh.example.grpc.hr.service;
 import "common.proto";
 
 import "google/protobuf/empty.proto";

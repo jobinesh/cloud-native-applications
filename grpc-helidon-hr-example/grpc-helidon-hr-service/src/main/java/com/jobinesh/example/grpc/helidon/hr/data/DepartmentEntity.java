@@ -1,8 +1,8 @@
 package com.jobinesh.example.grpc.helidon.hr.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.jobinesh.example.grpc.helidon.hr.service.Department;
-import com.jobinesh.example.grpc.helidon.hr.service.Employee;
+import com.jobinesh.example.grpc.hr.service.Department;
+import com.jobinesh.example.grpc.hr.service.Employee;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,6 +1,6 @@
 package com.jobinesh.example.grpc.helidon.hr.data;
 
-import com.jobinesh.example.grpc.helidon.hr.service.Employee;
+import com.jobinesh.example.grpc.hr.service.Employee;
 
 public class EmployeeEntity {
     private Long id;

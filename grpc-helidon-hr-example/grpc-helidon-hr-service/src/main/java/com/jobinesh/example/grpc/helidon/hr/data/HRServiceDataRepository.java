@@ -3,7 +3,7 @@ package com.jobinesh.example.grpc.helidon.hr.data;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jobinesh.example.grpc.helidon.hr.service.DepartmentFilter;
+import com.jobinesh.example.grpc.hr.service.DepartmentFilter;
 
 import java.io.InputStream;
 import java.util.ArrayList;

@@ -1,24 +1,88 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <parent>
-        <groupId>com.jobinesh.example.grpc</groupId>
-        <artifactId>grpc-helidon-hr-example</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
+
     <modelVersion>4.0.0</modelVersion>
     <artifactId>grpc-helidon-hr-client</artifactId>
     <packaging>jar</packaging>
     <name>${project.artifactId}</name>
     <url>http://maven.apache.org</url>
+    <groupId>com.jobinesh.example.grpc</groupId>
+    <version>1.0-SNAPSHOT</version>
     <properties>
-        <mainClass>com.jobinesh.example.grpc.helidon.hr.client.GrpcClient</mainClass>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <grpc.version>1.26.0</grpc.version>
+        <protobuf.version>3.11.0</protobuf.version>
+        <jackson.version>2.9.6</jackson.version>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <!--grpc dependencies-->
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-netty</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-protobuf</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-stub</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+            <!--google grpc apis-->
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java-util</artifactId>
+                <version>${protobuf.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.google.guava</groupId>
+                        <artifactId>guava</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf.version}</version>
+            </dependency>
+            <!--jackson api-->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
+        <!--grpc dependencies-->
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-protobuf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-stub</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.jobinesh.example.grpc</groupId>
             <artifactId>grpc-helidon-hr-proto</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <!-- Added just for reusing some model classes in the demo client code, not required in general
+        <dependency>
+            <groupId>com.jobinesh.example.grpc</groupId>
+            <artifactId>grpc-helidon-hr-service</artifactId>
+            <version>${project.version}</version>
+        </dependency>-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -42,11 +106,6 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.jobinesh.example.grpc</groupId>
-            <artifactId>grpc-helidon-hr-service</artifactId>
-            <version>${project.version}</version>
         </dependency>
     </dependencies>
 </project>

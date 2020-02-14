@@ -29,7 +29,7 @@
     <artifactId>grpc-helidon-hr-service</artifactId>
     <name>${project.artifactId}</name>
     <properties>
-        <mainClass>io.helidon.microprofile.server.Main</mainClass>
+        <mainClass>com.jobinesh.example.grpc.helidon.hr.service.HelidonSEServer</mainClass>
     </properties>
 
     <dependencies>

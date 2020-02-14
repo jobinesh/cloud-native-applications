@@ -1,26 +1,24 @@
 package com.jobinesh.example.grpc.helidon.hr.client;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.protobuf.Empty;
 import com.google.protobuf.Int64Value;
-import com.jobinesh.example.grpc.helidon.hr.data.DepartmentEntity;
-import com.jobinesh.example.grpc.helidon.hr.service.Department;
-import com.jobinesh.example.grpc.helidon.hr.service.DepartmentFilter;
-import com.jobinesh.example.grpc.helidon.hr.service.DepartmentList;
-import com.jobinesh.example.grpc.helidon.hr.service.HRServiceGrpc;
+import com.jobinesh.example.grpc.hr.service.Department;
+import com.jobinesh.example.grpc.hr.service.DepartmentFilter;
+import com.jobinesh.example.grpc.hr.service.DepartmentList;
+import com.jobinesh.example.grpc.hr.service.HRServiceGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 
-import java.io.InputStream;
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Grpc Client
+ */
 /**
  * Grpc Client
  */
@@ -49,22 +47,7 @@ public class GrpcClient {
         try {
             log("gRPC Client");
             Department dept = client.findDepartmentById(1000L);
-            System.out.println( dept);
-            /*
-            CountDownLatch finishLatch = new CountDownLatch(1);
-            client.updateDepartmentsUsingStream(finishLatch);
-
-            client.fetchAllDepartmentsUsingStream();
-            client.updateDepartment(1000L);
-            Department dept = client.findDepartmentById(1000L);
-            DepartmentFilter filter = DepartmentFilter.newBuilder().build();
-            List<Department> depts = client.findDepartmentByFilter(filter);
-            client.deleteDepartment(1000L);
-            dept = client.findDepartmentById(1000L);
-
-            if (!finishLatch.await(10, TimeUnit.SECONDS)) {
-                log("gRPC API call can not finish within 10 seconds");
-            }*/
+            log(dept.toString());
 
         } catch (StatusRuntimeException e) {
             // Do not use Status.equals(...) - it's not well defined. Compare Code directly.
@@ -128,48 +111,5 @@ public class GrpcClient {
         hrServiceBlockingStub.deleteDepartment(Int64Value.of(id));
     }
 
-    private List<DepartmentEntity> readHRDataFromFileStore() {
-        List<DepartmentEntity> deptsList = null;
-        try {
-            ObjectMapper mapper = new ObjectMapper();
-            InputStream jsonInput = this.getClass().getResourceAsStream("/test-data.json");
-            deptsList = mapper.readValue(jsonInput,
-                    new TypeReference<List<DepartmentEntity>>() {
-                    });
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            deptsList = Collections.emptyList();
-        }
 
-        return deptsList;
-    }
-
-    private void updateDepartmentsUsingStream(final CountDownLatch finishLatch) throws InterruptedException {
-        List<DepartmentEntity> deptsList = readHRDataFromFileStore();
-
-        StreamObserver<Department> requestObserver = hrServiceAsyncStub.updateDepartmentsInBatch(new StreamObserver<Department>() {
-            public void onNext(Department department) {
-                log("updateDepartmentsInBatch:: Department ~ " + department);
-            }
-
-            public void onError(Throwable th) {
-                th.printStackTrace();
-            }
-
-            public void onCompleted() {
-                log("Completed!");
-                finishLatch.countDown();
-            }
-        });
-
-        try {
-            for (DepartmentEntity dept : deptsList) {
-                requestObserver.onNext(dept.toProto());
-            }
-        } catch (Exception ex) {
-            requestObserver.onError(ex);
-        }
-        requestObserver.onCompleted();
-
-    }
 }

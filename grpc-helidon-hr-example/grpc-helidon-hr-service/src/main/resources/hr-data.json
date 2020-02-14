@@ -1,0 +1,135 @@
+[
+  {
+    "id": 1000,
+    "departmentName": "HR",
+    "location": "San Francisco",
+    "employees": [
+      {
+        "id": 10001,
+        "firstName": "Tom",
+        "lastName": "Lee",
+        "phone": "60044445555",
+        "email": "tom.lee@grpc.com"
+      },
+      {
+        "id": 10002,
+        "firstName": "Venus",
+        "lastName": "Kim",
+        "phone": "60044445556",
+        "email": "venus.kim@grpc.com"
+      }
+    ]
+  },
+  {
+    "id": 2000,
+    "departmentName": "IT",
+    "location": "New York",
+    "employees": [
+      {
+        "id": 20001,
+        "firstName": "Ram",
+        "lastName": "Mohan",
+        "phone": "60044445553",
+        "email": "ram.mohan@grpc.com"
+      },
+      {
+        "id": 20002,
+        "firstName": "Anup",
+        "lastName": "Kim",
+        "phone": "60044445558",
+        "email": "anup.kim@grpc.com"
+      },
+      {
+        "id": 20003,
+        "firstName": "Tom",
+        "lastName": "Kim",
+        "phone": "60044445508",
+        "email": "tom.kim@grpc.com"
+      },
+      {
+        "id": 20004,
+        "firstName": "Karl",
+        "lastName": "Kim",
+        "phone": "60042445508",
+        "email": "karl.kim@grpc.com"
+      },
+      {
+        "id": 20005,
+        "firstName": "Karl",
+        "lastName": "Kim",
+        "phone": "60042445508",
+        "email": "karl.kim@grpc.com"
+      },
+      {
+        "id": 20006,
+        "firstName": "John",
+        "lastName": "Kim",
+        "phone": "60042445508",
+        "email": "john.kim@grpc.com"
+      },
+      {
+        "id": 20007,
+        "firstName": "John",
+        "lastName": "Kim",
+        "phone": "60042445508",
+        "email": "john.kim@grpc.com"
+      }
+    ]
+  },
+  {
+    "id": 3000,
+    "departmentName": "Software Engineering",
+    "location": "New York",
+    "employees": [
+      {
+        "id": 30001,
+        "firstName": "Ram",
+        "lastName": "Mohan",
+        "phone": "60044445553",
+        "email": "ram.mohan@grpc.com"
+      },
+      {
+        "id": 30002,
+        "firstName": "Anup",
+        "lastName": "Kim",
+        "phone": "60044445558",
+        "email": "anup.kim@grpc.com"
+      },
+      {
+        "id": 30003,
+        "firstName": "Tom",
+        "lastName": "Kim",
+        "phone": "60044445508",
+        "email": "tom.kim@grpc.com"
+      },
+      {
+        "id": 30004,
+        "firstName": "Karl",
+        "lastName": "Kim",
+        "phone": "60042445508",
+        "email": "karl.kim@grpc.com"
+      },
+      {
+        "id": 30005,
+        "firstName": "Karl",
+        "lastName": "Kim",
+        "phone": "60042445508",
+        "email": "karl.kim@grpc.com"
+      },
+      {
+        "id": 30006,
+        "firstName": "John",
+        "lastName": "Kim",
+        "phone": "60042445508",
+        "email": "john.kim@grpc.com"
+      },
+      {
+        "id": 30007,
+        "firstName": "John",
+        "lastName": "Kim",
+        "phone": "60042445508",
+        "email": "john.kim@grpc.com"
+      }
+    ]
+  }
+]

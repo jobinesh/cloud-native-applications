@@ -43,14 +43,16 @@ public class GrpcClient {
         System.out.println(message);
     }
 
-    private void exercieAllAPIs() throws InterruptedException {
+     private void exercieAllAPIs() throws InterruptedException {
         GrpcClient client = new GrpcClient();
 
         try {
             log("gRPC Client");
-            CountDownLatch finishLatch = new CountDownLatch(1);
-            client.updateDepartmentsUsingStream(finishLatch);
+            Department dept = client.findDepartmentById(1000L);
+            log(dept.toString());
             /*
+             CountDownLatch finishLatch = new CountDownLatch(1);
+            client.updateDepartmentsUsingStream(finishLatch);
             client.fetchAllDepartmentsUsingStream();
             client.updateDepartment(1000L);
             Department dept = client.findDepartmentById(1000L);
@@ -58,10 +60,10 @@ public class GrpcClient {
             List<Department> depts = client.findDepartmentByFilter(filter);
             client.deleteDepartment(1000L);
             dept = client.findDepartmentById(1000L);
-            */
+
             if (!finishLatch.await(10, TimeUnit.SECONDS)) {
                 log("gRPC API call can not finish within 10 seconds");
-            }
+            } */
 
         } catch (StatusRuntimeException e) {
             // Do not use Status.equals(...) - it's not well defined. Compare Code directly.
@@ -73,6 +75,7 @@ public class GrpcClient {
             client.shutdown();
         }
     }
+
 
     private void initializeStub() {
         channel = ManagedChannelBuilder.forAddress("localhost", 8080).usePlaintext().build();

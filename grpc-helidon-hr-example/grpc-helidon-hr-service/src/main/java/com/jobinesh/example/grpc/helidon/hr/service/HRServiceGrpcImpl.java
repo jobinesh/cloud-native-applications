@@ -4,14 +4,21 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.Int64Value;
 import com.jobinesh.example.grpc.helidon.hr.data.DepartmentEntity;
 import com.jobinesh.example.grpc.helidon.hr.data.HRServiceDataRepository;
+import com.jobinesh.example.grpc.hr.service.Department;
+import com.jobinesh.example.grpc.hr.service.DepartmentFilter;
+import com.jobinesh.example.grpc.hr.service.DepartmentList;
+import com.jobinesh.example.grpc.hr.service.HRServiceGrpc;
 import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
+import io.helidon.microprofile.grpc.core.RpcService;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@RpcService
 public class HRServiceGrpcImpl extends HRServiceGrpc.HRServiceImplBase {
+
 
     HRServiceDataRepository hrServiceDataRepository = new HRServiceDataRepository();
 

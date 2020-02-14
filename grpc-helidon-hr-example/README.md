@@ -18,4 +18,4 @@ $ mvn install
  $ cd  grpc-helidon-hr-client  
  $  mvn exec:java -DskipTests -Dexec.mainClass=com.jobinesh.example.grpc.helidon.hr.client.GrpcClient
 ```
-5. We are running our gRPC API as Heldion SE microservice in this example. As a bonus you can use the built-in Helidon SE offerings for moniotoring and tracing the gRPC APIs. For instnace the following URLs gives you helath check info: http://localhost:8080/health
+5. We are running our gRPC API as Heldion SE microservice in this example. The advantage here is that we can leverage the  built-in Helidon SE offerings for monitoring and tracing the gRPC APIs. For instance the following URL gives you health check info for our example: http://localhost:8080/health

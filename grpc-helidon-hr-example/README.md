@@ -13,9 +13,19 @@ $ mvn install
  $ cd  grpc-helidon-hr-service 
  $ mvn exec:java 
 ```  
-4. Run the Client
+4. The following APIs are exposed by the server used in this example
+```
+  rpc createDepartment (Department) returns (Department) {};
+  rpc updateDepartment (Department) returns (Department) {};
+  rpc findDepartmentsByFilter(DepartmentFilter) returns (DepartmentList) {};
+  rpc deleteDepartment(google.protobuf.Int64Value) returns (google.protobuf.Empty) {};
+  rpc findDepartmentById (google.protobuf.Int64Value) returns (Department) {};
+  rpc findAllDepartments(google.protobuf.Empty) returns (stream Department) {};
+  rpc updateDepartmentsInBatch(stream Department) returns (stream Department){};
+```
+5. Run the Client
 ```
  $ cd  grpc-helidon-hr-client  
  $  mvn exec:java -DskipTests -Dexec.mainClass=com.jobinesh.example.grpc.helidon.hr.client.GrpcClient
 ```
-5. We are running our gRPC API as Heldion SE microservice in this example. The advantage here is that we can leverage the  built-in Helidon SE offerings for monitoring and tracing the gRPC APIs. For instance the following URL gives you health check info for our example: http://localhost:8080/health
+6. We are running our gRPC API as Heldion SE microservice in this example. The advantage here is that we can leverage the  built-in Helidon SE offerings for monitoring and tracing the gRPC APIs. For instance the following URL gives you health check info for our example: http://localhost:8080/health

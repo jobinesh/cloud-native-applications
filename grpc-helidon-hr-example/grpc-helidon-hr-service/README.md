@@ -1,4 +1,4 @@
-# Helidon Quickstart MP Example
+# gRPC Helidon HR Service
 
 This example implements a simple Hello World REST service using MicroProfile.
 
@@ -7,22 +7,14 @@ This example implements a simple Hello World REST service using MicroProfile.
 With JDK8+
 ```bash
 mvn package
-java -jar target/grpc-helidon-hr-service.jar
+mvn exec:java
 ```
 
 ## Exercise the application
-
 ```
-curl -X GET http://localhost:8080/greet
-{"message":"Hello World!"}
-
-curl -X GET http://localhost:8080/greet/Joe
-{"message":"Hello Joe!"}
-
-curl -X PUT -H "Content-Type: application/json" -d '{"greeting" : "Hola"}' http://localhost:8080/greet/greeting
-
-curl -X GET http://localhost:8080/greet/Jose
-{"message":"Hola Jose!"}
+ $ cd  ../grpc-helidon-hr-client  
+ $ mvn install
+ $ mvn exec:java -DskipTests -Dexec.mainClass=com.jobinesh.example.grpc.helidon.hr.client.GrpcClient
 ```
 
 ## Try health and metrics

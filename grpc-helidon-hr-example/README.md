@@ -2,7 +2,7 @@
 ## A Simple Department-Employee Example Illustrating Create Read Update Delete (CRUD) operations with gRPC APIs 
 To Run this example do the following
 1. Clone the repository https://github.com/jobinesh/cloud-native-applications.git 
-2. Open a terminal and perfrom the following
+2. Open a terminal and do the following
 ```
 $ cd  cloud-native-applications/grpc-helidon-hr-example
 $ mvn install
@@ -28,4 +28,7 @@ $ mvn install
  $ cd  grpc-helidon-hr-client  
  $  mvn exec:java -DskipTests -Dexec.mainClass=com.jobinesh.example.grpc.helidon.hr.client.GrpcClient
 ```
-6. We are running our gRPC API as Heldion SE microservice in this example. The advantage here is that we can leverage the  built-in Helidon SE offerings for monitoring and tracing the gRPC APIs. For instance the following URL gives you health check info for our example: http://localhost:8080/health
+6. We are running our gRPC API as Heldion SE microservice in this example. 
+The advantage here is that we can leverage the  built-in Helidon SE offerings for monitoring and tracing the gRPC APIs. 
+- Health check url : http://localhost:8080/health
+- Metrics url: http://localhost:8080/metrics

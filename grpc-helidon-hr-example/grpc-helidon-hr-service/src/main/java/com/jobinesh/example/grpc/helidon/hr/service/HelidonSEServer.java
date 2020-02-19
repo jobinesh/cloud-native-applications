@@ -7,6 +7,7 @@ import io.helidon.grpc.server.GrpcServer;
 import io.helidon.grpc.server.GrpcServerConfiguration;
 import io.helidon.health.HealthSupport;
 import io.helidon.health.checks.HealthChecks;
+import io.helidon.metrics.MetricsSupport;
 import io.helidon.webserver.Routing;
 import io.helidon.webserver.ServerConfiguration;
 import io.helidon.webserver.WebServer;
@@ -61,10 +62,12 @@ public class HelidonSEServer {
                 .add(HealthChecks.healthChecks())
                 .add(grpcServer.healthChecks())
                 .build();
+        MetricsSupport metrics = MetricsSupport.create();
 
         // start web server with health endpoint
         Routing routing = Routing.builder()
-                .register(health)
+                .register(health)  // Health at "/health"
+                .register(metrics) // Metrics at "/metrics"
                 .build();
 
         ServerConfiguration webServerConfig = ServerConfiguration.builder(config.get("server")).build();

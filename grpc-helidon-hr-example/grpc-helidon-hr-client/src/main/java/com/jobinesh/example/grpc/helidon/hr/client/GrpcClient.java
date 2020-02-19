@@ -19,9 +19,6 @@ import java.util.concurrent.TimeUnit;
 /**
  * Grpc Client
  */
-/**
- * Grpc Client
- */
 public class GrpcClient {
 
     private ManagedChannel channel;

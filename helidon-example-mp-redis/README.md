@@ -28,7 +28,7 @@ java -jar target/helidon-example-mp-redis.jar
 - RedisMessageProducer:  This class contains  the logic for publishing messages to the Redis channel topic. It is used by GreetResource class.
 - GreetResource: : This is the REST resource implementation used in this example. When updateGreeting method is called
 via REST PUT operation, the new greeting sent by client is sent to Redis channel for consumption by the Redis channel subscribers
-- microprofile-config.properties: This config file holds the kafka configuration used in this example
+- microprofile-config.properties: This config file holds the Redis server configuration used in this example
 
 ## Exercising the Example
 

@@ -24,6 +24,7 @@ mvn package
 java -jar target/helidon-example-mp-redis.jar
 ```
 ## A Glance at the Implementation
+- RedisProvider: This class creates the RedisClient for use in RedisMessageConsumer and RedisMessageProducer classes.
 - RedisMessageConsumer: This class contains the logic for listening to the Redis channel for messages. This class uses a custom annotation '@Startup' so that it gets instantiated on application start up. The annotation '@Startup' is provided by io.helidon.examples.mp.spi.StartupInitializerExtension class in this project. To learn more about this extension, read section '16.1. Creating an Extension' in https://docs.jboss.org/weld/reference/latest/en-US/html/extend.html
 - RedisMessageProducer:  This class contains  the logic for publishing messages to the Redis channel topic. It is used by GreetResource class.
 - GreetResource: : This is the REST resource implementation used in this example. When updateGreeting method is called

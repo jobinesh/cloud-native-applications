@@ -43,4 +43,4 @@ curl -X GET http://localhost:8080/greet/Jose
 Now, in order to view the API call tracing for the above API calls with Jaeger UI, open a browser and navigate to the following URL:
 http://localhost:16686/search
 
-Have fune !
+Have fun !

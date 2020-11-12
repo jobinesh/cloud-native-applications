@@ -1,43 +1,65 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-      
-  <modelVersion>4.0.0</modelVersion>
-      
-  <groupId>com.jobinesh.example</groupId>
-      
-  <artifactId>cloud-native-example</artifactId>
-      
-  <packaging>pom</packaging>
-      
-  <version>1.0-SNAPSHOT</version>
-      
-  <url>http://maven.apache.org</url>
-      
-  <properties>
-            
-    <maven.compiler.target>1.8</maven.compiler.target>
-            
-    <maven.compiler.source>1.8</maven.compiler.source>
         
+  
+  <modelVersion>4.0.0</modelVersion>
+        
+  
+  <groupId>com.jobinesh.example</groupId>
+        
+  
+  <artifactId>cloud-native-example</artifactId>
+        
+  
+  <packaging>pom</packaging>
+        
+  
+  <version>1.0-SNAPSHOT</version>
+        
+  
+  <url>http://maven.apache.org</url>
+        
+  
+  <properties>
+                
+    
+    <maven.compiler.target>1.8</maven.compiler.target>
+                
+    
+    <maven.compiler.source>1.8</maven.compiler.source>
+            
+  
   </properties>
-      
+        
+  
   <modules>
-            
+                
+    
     <module>grpc-helidon-hr-example</module>
-            
+                
+    
     <module>grpc-hello-world-server</module>
-            
+                
+    
     <module>grpc-hr-example</module>
-            
+                
+    
     <module>helidon-example-mp-kafka</module>
-            
+                
+    
     <module>helidon-example-mp-redis</module>
-            
+                
+    
     <module>helidon-example-mp-rx-msg-kafka</module>
-          
+              
+    
     <module>helidon-example-mp-jaeger</module>
+          
+    
+    <module>helidon-elk-mp</module>
       
   </modules>
-     
+       
+
 
 </project>

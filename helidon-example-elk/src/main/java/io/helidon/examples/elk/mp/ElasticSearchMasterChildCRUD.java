@@ -262,24 +262,24 @@ public class ElasticSearchMasterChildCRUD {
             for(int i=0;i<4;i++) {
                 HRDoc emp = new HRDoc();
                 emp.setEmployeeId(UUID.randomUUID().toString());
-                emp.setFirstName("J" + emp.getEmployeeId());
+                emp.setFirstName("Jobinesh" + emp.getEmployeeId());
                 emp.setLastName("Purushothaman" + emp.getEmployeeId());
                 emp.setSex("MALE");
                 emp.setRelationType(new HRDoc.RelationType("employee", dept1.getId()));
                 elasticSearchCRUD.insertEmployee(emp, dept1.getId());
-                emp.setSex("FEMALE");
+                //emp.setLastName("Manakkattil");
                 // elasticSearchCRUD.updateEmployee(emp, dept.getId());
             }
             for(int i=0;i<3;i++) {
                 HRDoc emp = new HRDoc();
                 emp.setEmployeeId(UUID.randomUUID().toString());
-                emp.setFirstName("R" + emp.getEmployeeId());
+                emp.setFirstName("Remys" + emp.getEmployeeId());
                 emp.setLastName("Jobinesh");
                 emp.setSex("FEMALE");
                 emp.setRelationType(new HRDoc.RelationType("employee", dept2.getId()));
                 elasticSearchCRUD.insertEmployee(emp, dept2.getId());
-                emp.setSex("FEMALE");
-                // elasticSearchCRUD.updateEmployee(emp, dept.getId());
+                //emp.setLastName("JP");
+                //elasticSearchCRUD.updateEmployee(emp, dept.getId());
             }
         }
     }

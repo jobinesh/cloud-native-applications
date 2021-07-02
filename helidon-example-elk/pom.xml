@@ -35,7 +35,7 @@
     <properties>
        <!-- <elasticsearch.version>7.9.3</elasticsearch.version>
         <jackson.version>2.11.2</jackson.version>-->
-        <elasticsearch.version>6.7.0</elasticsearch.version>
+        <elasticsearch.version>6.8.15</elasticsearch.version>
         <jackson.version>2.9.4</jackson.version>
         <mainClass>io.helidon.examples.elk.mp.ElasticSearchMasterChildCRUD</mainClass>
     </properties>
